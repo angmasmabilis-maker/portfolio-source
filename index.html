@@ -8,6 +8,11 @@
     <title>James Matthew Dela Torre — Full-Stack Developer</title>
     <script>
       (function(){
+        var route = sessionStorage.getItem('portfolio-spa-route');
+        if (route) {
+          sessionStorage.removeItem('portfolio-spa-route');
+          history.replaceState(null, '', route);
+        }
         var t = localStorage.getItem('portfolio-theme');
         document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
       })();
